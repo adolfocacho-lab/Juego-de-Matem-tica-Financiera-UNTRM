@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Juego de Matemática Financiera</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <div class="card" id="screen-topics">
+      <h1>Matemática Financiera</h1>
+
+      <div class="center" style="margin-bottom: 12px;">
+        <label for="student-name" style="font-size: 14px; display:block; margin-bottom:4px;">
+          Apellidos y nombres:
+        </label>
+        <input
+          id="student-name"
+          type="text"
+          placeholder="Escribe tus apellidos y nombres"
+        />
+      </div>
+
+      <p class="center">Elige un tema y responde las preguntas para subir de nivel.</p>
+      <hr />
+      <h3>Temas</h3>
+      <div id="topic-list"></div>
+    </div>
+
+    <div class="card hidden" id="screen-quiz">
+      <div class="status-bar">
+        <span id="topic-name"></span>
+        <span id="question-counter"></span>
+      </div>
+      <div class="progress">
+        <div class="progress-inner" id="progress-bar"></div>
+      </div>
+      <div class="badge" id="level-label">Nivel 1</div>
+      <div class="question-text" id="question-text"></div>
+      <div class="answers" id="answers"></div>
+      <div class="explanation hidden" id="explanation-box"></div>
+      <div class="actions-row">
+        <button class="btn btn-secondary btn-small" id="btn-exit">Salir</button>
+        <button class="btn btn-small" id="btn-next" disabled>Siguiente</button>
+      </div>
+    </div>
+
+    <div class="card hidden" id="screen-summary">
+      <h2 id="summary-title">Tema completado</h2>
+      <div class="center summary-emoji" id="summary-emoji">🎉</div>
+
+      <div class="center" id="summary-student" class="summary-student">
+        Alumno:
+      </div>
+
+      <div class="center">
+        <div class="summary-score" id="summary-score"></div>
+        <div class="summary-detail" id="summary-detail"></div>
+      </div>
+      <hr />
+
+      <div class="center summary-note">
+        <label for="summary-score-input">
+          Registro de nota / puntaje:
+        </label>
+        <input
+          id="summary-score-input"
+          type="text"
+          placeholder="Ejemplo: 18 / 20 (90%)"
+        />
+        <small>
+          El alumno puede copiar o ajustar este texto.
+        </small>
+      </div>
+
+      <div class="center summary-report-block">
+        <label for="summary-report">
+          Resumen para copiar y enviar:
+        </label>
+        <textarea
+          id="summary-report"
+          readonly
+        ></textarea>
+        <button
+          class="btn btn-secondary btn-small"
+          id="btn-copy-report"
+        >
+          Copiar resumen
+        </button>
+        <small>
+          Luego pégalo en WhatsApp, Classroom, etc.
+        </small>
+      </div>
+
+      <div id="summary-extra"></div>
+      <button class="btn" id="btn-back-topics">Volver a temas</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
